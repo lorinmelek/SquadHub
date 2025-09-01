@@ -16,21 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvz-i0-1Cx">
-                                <rect key="frame" x="176" y="243" width="41.333333333333343" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvz-i0-1Cx">
+                                <rect key="frame" x="24" y="134" width="345" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="B6u-85-8xG">
-                                <rect key="frame" x="54" y="402" width="285" height="199"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="B6u-85-8xG">
+                                <rect key="frame" x="24" y="229.33333333333331" width="345" height="513.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MemberCell" id="6ZD-S7-bUh">
-                                        <rect key="frame" x="0.0" y="50" width="285" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="345" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ZD-S7-bUh" id="WIa-Mj-yXa">
-                                            <rect key="frame" x="0.0" y="0.0" width="285" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -44,9 +44,13 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Yvz-i0-1Cx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0rf-rW-jfH"/>
-                            <constraint firstItem="B6u-85-8xG" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="P9Z-B2-8yl"/>
-                            <constraint firstItem="Yvz-i0-1Cx" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="u7R-Bv-Ixk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="B6u-85-8xG" secondAttribute="trailing" constant="24" id="7GY-5m-CPY"/>
+                            <constraint firstItem="Yvz-i0-1Cx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="7Io-Ms-VcP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Yvz-i0-1Cx" secondAttribute="trailing" constant="24" id="CKu-ah-r1l"/>
+                            <constraint firstItem="Yvz-i0-1Cx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="75" id="fNq-oA-7P9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="B6u-85-8xG" secondAttribute="bottom" constant="75" id="rW0-zo-Lva"/>
+                            <constraint firstItem="B6u-85-8xG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="sE2-u4-wp1"/>
+                            <constraint firstItem="B6u-85-8xG" firstAttribute="top" secondItem="Yvz-i0-1Cx" secondAttribute="bottom" constant="75" id="shd-qP-AvP"/>
                         </constraints>
                     </view>
                     <connections>
