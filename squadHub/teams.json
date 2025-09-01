@@ -1,0 +1,56 @@
+[
+  {
+    "id": "CUS-001",
+    "name": "Venus",
+    "members": [
+      {
+        "id": "M-101",
+        "name": "Samet",
+        "role": "Developer",
+        "colorHex": "#3B82F6"
+      },
+      {
+        "id": "M-102",
+        "name": "Dilan",
+        "role": "Analyst",
+        "colorHex": "#10B981"
+      }
+    ]
+  },
+  {
+    "id": "ASI-001",
+    "name": "Mars",
+    "members": [
+      {
+        "id": "M-201",
+        "name": "Emine",
+        "role": "Team Lead",
+        "colorHex": "#EF4444"
+      },
+      {
+        "id": "M-202",
+        "name": "Ekin",
+        "role": "Developer",
+        "colorHex": "#3B82F6"
+      }
+    ]
+  },
+  {
+    "id": "CORP-001",
+    "name": "Merkur",
+    "members": [
+      {
+        "id": "M-301",
+        "name": "Aytek",
+        "role": "PM",
+        "colorHex": "#F59E0B"
+      },
+      {
+        "id": "M-302",
+        "name": "Nevruz",
+        "role": "Developer",
+        "colorHex": "#3B82F6"
+      }
+    ]
+  }
+]
