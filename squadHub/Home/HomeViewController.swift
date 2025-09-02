@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 
 final class HomeViewController: UIViewController {
-    // MARK: - Outlets (Storyboard’da bağla)
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var statsLabel: UILabel!
 
@@ -13,14 +13,10 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // TableView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableView.automaticDimension
-        // Eğer prototype cell kullanmıyorsan aşağıyı aç:
-        // tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ChangeCell")
-
 
         loadDataAndRefreshUI()
     }

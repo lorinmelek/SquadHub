@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct Team: Codable, Equatable {
+struct Team: Decodable {
     let id: String
     var name: String
     var members: [Member]

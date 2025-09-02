@@ -1,8 +1,8 @@
 import UIKit
 
 final class TeamDetailViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var nameLabel: UILabel!
     var team: Team?
 
     override func viewDidLoad() {

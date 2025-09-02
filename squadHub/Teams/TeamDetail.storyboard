@@ -40,17 +40,36 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="Flo-XH-Eep"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLM-US-Q6p">
+                                <rect key="frame" x="120" y="773" width="173" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" title="Add Member"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iLM-US-Q6p" secondAttribute="trailing" constant="110" id="3MI-TO-jRL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iLM-US-Q6p" secondAttribute="bottom" constant="20" id="6G2-Fx-4sd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iLM-US-Q6p" secondAttribute="trailing" constant="150" id="79M-u0-UqV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="B6u-85-8xG" secondAttribute="trailing" constant="24" id="7GY-5m-CPY"/>
                             <constraint firstItem="Yvz-i0-1Cx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="7Io-Ms-VcP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iLM-US-Q6p" secondAttribute="bottom" constant="30" id="7NV-SS-X9j"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Yvz-i0-1Cx" secondAttribute="trailing" constant="24" id="CKu-ah-r1l"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iLM-US-Q6p" secondAttribute="bottom" constant="40" id="JBm-0o-1DD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iLM-US-Q6p" secondAttribute="bottom" constant="15" id="WX4-A0-KHb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iLM-US-Q6p" secondAttribute="bottom" constant="50" id="XTv-B6-rQN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iLM-US-Q6p" secondAttribute="trailing" constant="150" id="Yl5-Ac-mZp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iLM-US-Q6p" secondAttribute="bottom" constant="10" id="Yra-du-YBC"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iLM-US-Q6p" secondAttribute="trailing" constant="120" id="ZXh-Cd-o4N"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iLM-US-Q6p" secondAttribute="trailing" constant="150" id="cIW-uy-9zp"/>
                             <constraint firstItem="Yvz-i0-1Cx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="75" id="fNq-oA-7P9"/>
+                            <constraint firstItem="iLM-US-Q6p" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="120" id="fft-Jb-ap4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iLM-US-Q6p" secondAttribute="trailing" constant="160" id="o9n-70-jAp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="B6u-85-8xG" secondAttribute="bottom" constant="75" id="rW0-zo-Lva"/>
                             <constraint firstItem="B6u-85-8xG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="sE2-u4-wp1"/>
                             <constraint firstItem="B6u-85-8xG" firstAttribute="top" secondItem="Yvz-i0-1Cx" secondAttribute="bottom" constant="75" id="shd-qP-AvP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iLM-US-Q6p" secondAttribute="trailing" constant="100" id="tpR-X4-zyE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -64,6 +83,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
