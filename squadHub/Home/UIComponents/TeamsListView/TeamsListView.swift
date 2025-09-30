@@ -24,7 +24,7 @@ final class TeamsListView: UIView {
     }
     
     private func configureView() {
-        guard let view = self.loadViewFromNib(nibName: "TeamsListView") else { return }
+        guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
         self.addSubview(view)
         setupTableView()
@@ -35,8 +35,6 @@ final class TeamsListView: UIView {
         tableView.dataSource = self
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = .lightGray
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 70
         
         let nib = UINib(nibName: "TeamCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TeamCell")

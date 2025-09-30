@@ -35,19 +35,17 @@ final class HomeContentView: UIView {
         teamsListView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            // Header
+
             headerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -10),
             headerView.leadingAnchor.constraint(equalTo: leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: trailingAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 60),
             
-            // Summary
             summaryView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 10),
             summaryView.leadingAnchor.constraint(equalTo: leadingAnchor),
             summaryView.trailingAnchor.constraint(equalTo: trailingAnchor),
             summaryView.heightAnchor.constraint(equalToConstant: 40),
             
-            // Teams List
             teamsListView.topAnchor.constraint(equalTo: summaryView.bottomAnchor, constant: 10),
             teamsListView.leadingAnchor.constraint(equalTo: leadingAnchor),
             teamsListView.trailingAnchor.constraint(equalTo: trailingAnchor),

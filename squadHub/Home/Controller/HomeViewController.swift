@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private let contentView = HomeContentView()
+    private let tabBarView = TabBarView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +20,25 @@ class HomeViewController: UIViewController {
     
     private func setupUI() {
         view.addSubview(contentView)
+        view.addSubview(tabBarView)
+        
         contentView.translatesAutoresizingMaskIntoConstraints = false
+        tabBarView.translatesAutoresizingMaskIntoConstraints = false
+        
+        tabBarView.delegate = self
         
         NSLayoutConstraint.activate([
+
             contentView.topAnchor.constraint(equalTo: view.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            contentView.bottomAnchor.constraint(equalTo: tabBarView.topAnchor),
+            
+
+            tabBarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tabBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tabBarView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tabBarView.heightAnchor.constraint(equalToConstant: 83)
         ])
     }
     
@@ -46,4 +59,8 @@ class HomeViewController: UIViewController {
         
         contentView.configure(teams: testTeams)
     }
+}
+
+extension HomeViewController: TabBarViewDelegate {
+    func tabBarView(_ tabBarView: TabBarView, didSelectTabAt index: Int) { }
 }

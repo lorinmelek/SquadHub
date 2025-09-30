@@ -19,20 +19,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Axq-oU-R2X">
-                    <rect key="frame" x="12" y="0.0" width="375" height="500"/>
+                    <rect key="frame" x="0.0" y="0.0" width="399" height="500"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Axq-oU-R2X" secondAttribute="trailing" constant="-12" id="El5-PB-dTs"/>
-                <constraint firstAttribute="bottom" secondItem="Axq-oU-R2X" secondAttribute="bottom" id="LJX-JX-wpl"/>
-                <constraint firstItem="Axq-oU-R2X" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qpq-jX-Pwq"/>
-                <constraint firstItem="Axq-oU-R2X" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="sll-C2-Nea"/>
+                <constraint firstItem="Axq-oU-R2X" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="08l-CI-pju"/>
+                <constraint firstAttribute="bottom" secondItem="Axq-oU-R2X" secondAttribute="bottom" id="61n-td-XF5"/>
+                <constraint firstAttribute="trailing" secondItem="Axq-oU-R2X" secondAttribute="trailing" constant="-24" id="I4F-yh-BjF"/>
+                <constraint firstItem="Axq-oU-R2X" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TDR-6C-PDz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="11" y="31"/>
+            <point key="canvasLocation" x="9.9236641221374047" y="30.985915492957748"/>
         </view>
     </objects>
     <resources>

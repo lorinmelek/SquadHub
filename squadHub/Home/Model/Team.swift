@@ -10,7 +10,6 @@ struct Team: Codable {
     let members: [Member]
     
     var memberCount: Int {
-        print("📊 memberCount hesaplanıyor: \(members.count)")
         return members.count
     }
 }

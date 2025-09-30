@@ -22,7 +22,7 @@ final class SummaryView: UIView {
     }
     
     private func configureView() {
-        guard let view = self.loadViewFromNib(nibName: "SummaryView") else { return }
+        guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
         self.addSubview(view)
         
