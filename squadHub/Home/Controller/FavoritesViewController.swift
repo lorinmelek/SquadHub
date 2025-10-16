@@ -7,21 +7,27 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController, TeamLoadable {
+class FavoritesViewController: UIViewController {
 
     weak var coordinator: FavoritesCoordinator?
     private let contentView = FavoritesContentView()
-    
+    private let viewModel = FavoritesViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        loadTeams()
+        setupViewModel()
+        viewModel.loadTeams()
     }
-    
+
+    private func setupViewModel() {
+        viewModel.delegate = self
+    }
+
     private func setupUI() {
         view.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: view.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -29,9 +35,15 @@ class FavoritesViewController: UIViewController, TeamLoadable {
             contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
-    func handleTeamsLoaded(_ teams: [Team]) {
-        let favoriteTeams: [Team] = []
-        contentView.configure(favoriteTeams: favoriteTeams)
+}
+
+// MARK: - FavoritesViewModelDelegate
+extension FavoritesViewController: FavoritesViewModelDelegate {
+    func favoritesViewModelDidLoadTeams(_ viewModel: FavoritesViewModel, teams: [Team]) {
+        contentView.configure(favoriteTeams: teams)
+    }
+
+    func favoritesViewModelDidFailWithError(_ viewModel: FavoritesViewModel, error: Error) {
+        print("Error loading teams: \(error.localizedDescription)")
     }
 }

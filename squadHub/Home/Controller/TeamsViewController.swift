@@ -7,16 +7,22 @@
 
 import UIKit
 
-class TeamsViewController: UIViewController, TeamLoadable {
+class TeamsViewController: UIViewController {
 
     weak var coordinator: TeamsCoordinator?
     private let contentView = TeamsContentView()
+    private let viewModel = TeamsViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupViewModel()
         contentView.delegate = self
-        loadTeams()
+        viewModel.loadTeams()
+    }
+
+    private func setupViewModel() {
+        viewModel.delegate = self
     }
 
     private func setupUI() {
@@ -30,12 +36,20 @@ class TeamsViewController: UIViewController, TeamLoadable {
             contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+}
 
-    func handleTeamsLoaded(_ teams: [Team]) {
+// MARK: - TeamsViewModelDelegate
+extension TeamsViewController: TeamsViewModelDelegate {
+    func teamsViewModelDidLoadTeams(_ viewModel: TeamsViewModel, teams: [Team]) {
         contentView.configure(teams: teams)
+    }
+
+    func teamsViewModelDidFailWithError(_ viewModel: TeamsViewModel, error: Error) {
+        print("Error loading teams: \(error.localizedDescription)")
     }
 }
 
+// MARK: - TeamsListViewDelegate
 extension TeamsViewController: TeamsListViewDelegate {
     func teamsListView(_ view: TeamsListView, didSelectTeam team: Team) {
         coordinator?.showTeamDetail(team: team)
