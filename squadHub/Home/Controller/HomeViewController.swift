@@ -8,59 +8,75 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
-    private let contentView = HomeContentView()
-    private let tabBarView = TabBarView()
-    
+
+    weak var coordinator: HomeCoordinator?
+
+    private let headerView = HomeHeaderView()
+    private let summaryView = SummaryView()
+    private let teamsListView = TeamsListView()
+
+    private let viewModel = HomeViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        loadData()
+        setupViewModel()
+        teamsListView.delegate = self
+        viewModel.loadTeams()
     }
-    
+
+    private func setupViewModel() {
+        viewModel.delegate = self
+    }
+
     private func setupUI() {
-        view.addSubview(contentView)
-        view.addSubview(tabBarView)
-        
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        tabBarView.translatesAutoresizingMaskIntoConstraints = false
-        
-        tabBarView.delegate = self
-        
+        view.backgroundColor = .white
+
+        view.addSubview(headerView)
+        view.addSubview(summaryView)
+        view.addSubview(teamsListView)
+
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        summaryView.translatesAutoresizingMaskIntoConstraints = false
+        teamsListView.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -10),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerView.heightAnchor.constraint(equalToConstant: 60),
 
-            contentView.topAnchor.constraint(equalTo: view.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: tabBarView.topAnchor),
-            
+            summaryView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 10),
+            summaryView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            summaryView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            summaryView.heightAnchor.constraint(equalToConstant: 40),
 
-            tabBarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tabBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tabBarView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tabBarView.heightAnchor.constraint(equalToConstant: 83)
+            teamsListView.topAnchor.constraint(equalTo: summaryView.bottomAnchor, constant: 10),
+            teamsListView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            teamsListView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            teamsListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-    }
-    
-    private func loadData() {
-        let testTeams = [
-            Team(name: "Venus", members: [
-                Member(name: "Dilan", role: "Developer"),
-                Member(name: "Ahmet", role: "Designer")
-            ]),
-            Team(name: "Mars", members: [
-                Member(name: "Merve", role: "Project Manager")
-            ]),
-            Team(name: "Merkur", members: [
-                Member(name: "Selin", role: "iOS Developer"),
-                Member(name: "Emre", role: "Backend Developer")
-            ])
-        ]
-        
-        contentView.configure(teams: testTeams)
+
+        headerView.configure(title: "Home")
     }
 }
 
-extension HomeViewController: TabBarViewDelegate {
-    func tabBarView(_ tabBarView: TabBarView, didSelectTabAt index: Int) { }
+// MARK: - HomeViewModelDelegate
+
+extension HomeViewController: HomeViewModelDelegate {
+    func homeViewModelDidLoadTeams(_ viewModel: HomeViewModel, teams: [Team]) {
+        summaryView.configure(teamCount: viewModel.totalTeams, totalMembers: viewModel.totalMembers)
+        teamsListView.configure(with: teams)
+    }
+
+    func homeViewModelDidFailWithError(_ viewModel: HomeViewModel, error: Error) {
+    }
+}
+
+// MARK: - TeamsListViewDelegate
+
+extension HomeViewController: TeamsListViewDelegate {
+    func teamsListView(_ view: TeamsListView, didSelectTeam team: Team) {
+        coordinator?.showTeamDetail(team: team)
+    }
 }

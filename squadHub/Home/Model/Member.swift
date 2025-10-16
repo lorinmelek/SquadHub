@@ -8,6 +8,7 @@
 import Foundation
 
 struct Member: Codable {
+    let id: String
     let name: String
     let role: String
 }

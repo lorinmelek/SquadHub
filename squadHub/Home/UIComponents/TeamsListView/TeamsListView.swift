@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol TeamsListViewDelegate: AnyObject {
+    func teamsListView(_ view: TeamsListView, didSelectTeam team: Team)
+}
+
 final class TeamsListView: UIView {
     
     @IBOutlet private weak var tableView: UITableView!
-    
+
+    weak var delegate: TeamsListViewDelegate?
     private var teams: [Team] = []
     
     override init(frame: CGRect) {
@@ -58,4 +63,11 @@ extension TeamsListView: UITableViewDataSource, UITableViewDelegate {
         cell.configure(with: team)
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedTeam = teams[indexPath.row]
+        delegate?.teamsListView(self, didSelectTeam: selectedTeam)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
+

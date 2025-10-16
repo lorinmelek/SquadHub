@@ -1,22 +1,31 @@
 //
-//  TeamsViewController.swift
+//  TeamDetailViewController.swift
 //  SquadHub
 //
-//  Created by LORIN VURAL on 29.09.2025.
+//  Created by LORIN VURAL on 13.10.2025.
 //
 
 import UIKit
 
-class TeamsViewController: UIViewController, TeamLoadable {
+class TeamDetailViewController: UIViewController {
 
-    weak var coordinator: TeamsCoordinator?
-    private let contentView = TeamsContentView()
+
+    weak var coordinator: HomeCoordinator?  
+    private let contentView = TeamDetailContentView()
+    private let team: Team
+
+    init(team: Team) {
+        self.team = team
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        contentView.delegate = self
-        loadTeams()
     }
 
     private func setupUI() {
@@ -29,15 +38,13 @@ class TeamsViewController: UIViewController, TeamLoadable {
             contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-    }
 
-    func handleTeamsLoaded(_ teams: [Team]) {
-        contentView.configure(teams: teams)
+        contentView.delegate = self
+        contentView.configure(team: team)
     }
 }
 
-extension TeamsViewController: TeamsListViewDelegate {
+extension TeamDetailViewController: TeamsListViewDelegate {
     func teamsListView(_ view: TeamsListView, didSelectTeam team: Team) {
-        coordinator?.showTeamDetail(team: team)
     }
 }

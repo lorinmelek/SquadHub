@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabBarView" customModule="SquadHub" customModuleProvider="target">
             <connections>
-                <outlet property="favoritesButton" destination="zNS-41-vPM" id="pdj-LC-gRw"/>
+                <outlet property="favoritesButton" destination="1wT-59-Qu5" id="VTm-g7-hUH"/>
                 <outlet property="homeButton" destination="FhA-g8-RbE" id="7xP-1P-ykb"/>
                 <outlet property="searchButton" destination="mi4-f2-NiO" id="m3I-oU-Yge"/>
                 <outlet property="teamsButton" destination="zNS-41-vPM" id="czg-k5-hR9"/>
@@ -21,11 +21,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXg-Zd-z2y">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cXg-Zd-z2y">
                     <rect key="frame" x="0.0" y="8" width="375" height="33"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhA-g8-RbE">
-                            <rect key="frame" x="0.0" y="0.0" width="303" height="33"/>
+                            <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="33"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="MFM-sn-eeJ"/>
                             </constraints>
@@ -33,7 +33,7 @@
                             <buttonConfiguration key="configuration" style="plain"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mi4-f2-NiO">
-                            <rect key="frame" x="303" y="0.0" width="24" height="33"/>
+                            <rect key="frame" x="93.666666666666686" y="0.0" width="94" height="33"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="Lnn-A4-4br"/>
                             </constraints>
@@ -41,7 +41,7 @@
                             <buttonConfiguration key="configuration" style="plain"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wT-59-Qu5">
-                            <rect key="frame" x="327" y="0.0" width="24" height="33"/>
+                            <rect key="frame" x="187.66666666666666" y="0.0" width="93.666666666666657" height="33"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="Uu3-9j-1oD"/>
                             </constraints>
@@ -49,7 +49,7 @@
                             <buttonConfiguration key="configuration" style="plain"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNS-41-vPM">
-                            <rect key="frame" x="351" y="0.0" width="24" height="33"/>
+                            <rect key="frame" x="281.33333333333331" y="0.0" width="93.666666666666686" height="33"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="JYn-1b-JPn"/>
                             </constraints>

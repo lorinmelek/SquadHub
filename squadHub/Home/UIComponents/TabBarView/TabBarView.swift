@@ -45,17 +45,16 @@ final class TabBarView: UIView {
         let icons = ["house.fill", "magnifyingglass", "star.fill", "person.3.fill"]
         
         for (index, button) in buttons.enumerated() {
-
+            
             let config = UIImage.SymbolConfiguration(pointSize: 24, weight: .regular)
             let image = UIImage(systemName: icons[index], withConfiguration: config)
             
             button.setImage(image, for: .normal)
             button.setTitle("", for: .normal)
+            button.tintColor = .darkGray
             button.tag = index
             button.addTarget(self, action: #selector(tabButtonTapped(_:)), for: .touchUpInside)
         }
-        
-        selectTab(at: 0)
     }
     
     @objc private func tabButtonTapped(_ sender: UIButton) {
@@ -65,7 +64,8 @@ final class TabBarView: UIView {
     
     func selectTab(at index: Int) {
         guard index < buttons.count else { return }
-        buttons[selectedIndex].tintColor = .gray
+        buttons[selectedIndex].tintColor = .darkGray
         selectedIndex = index
+        buttons[selectedIndex].tintColor = .gray
     }
 }
